@@ -24,6 +24,7 @@
     ripgrep
     nushell 
     kubectl
+    python311
   ];
 
   home.file = {
