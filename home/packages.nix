@@ -10,7 +10,7 @@ let
   ];
 
   rust = with pkgs; [
-    rustup
+    rust-bin.stable.latest.default
   ];
 
   homePackages = with pkgs; [
@@ -19,6 +19,7 @@ let
     minikube
     openssl
     pkg-config
+    gcc
     sqlite
     tree
     wget
