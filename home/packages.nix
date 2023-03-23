@@ -17,7 +17,6 @@ let
 
   containers = with pkgs; [
     kubectl
-    podman
     minikube
   ];
 
