@@ -10,7 +10,7 @@ let
   ];
 
   rust = with pkgs; [
-    rust-bin.stable.latest.default
+    rustup
   ];
 
   homePackages = with pkgs; [
