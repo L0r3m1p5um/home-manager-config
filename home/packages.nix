@@ -11,19 +11,23 @@ let
 
   rust = with pkgs; [
     rustup
+    pkg-config
+    gcc
+  ];
+
+  containers = with pkgs; [
+    kubectl
+    podman
+    minikube
   ];
 
   homePackages = with pkgs; [
     ripgrep
-    kubectl
-    minikube
     openssl
-    pkg-config
-    gcc
     sqlite
     tree
     wget
   ];
   
 in
-python ++ homePackages ++ rust
+python ++ homePackages ++ rust ++ containers
