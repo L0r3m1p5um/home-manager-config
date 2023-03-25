@@ -22,7 +22,9 @@ let
 
   homePackages = with pkgs; [
     ripgrep
+    git-crypt
     openssl
+    just
     sqlite
     tree
     wget
