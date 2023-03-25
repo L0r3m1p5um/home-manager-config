@@ -42,6 +42,8 @@ in
     shell = pkgs.fish;
   };
 
+  users.users.nixos.shell = pkgs.fish;
+
   environment = {
     systemPackages = with pkgs;
       [
