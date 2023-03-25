@@ -17,6 +17,7 @@
     enable = true;
     userName = "Michael Araujo";
     userEmail = "michael.e.araujo@gmail.com";
+    lfs.enable = true;
     ignores = [
       ".direnv/"
       "*.swp"
