@@ -11,6 +11,7 @@
 
   nushell = {
     enable = true;
+    configFile.text = (builtins.readFile config/config.nu);
   };
 
   git = {

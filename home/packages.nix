@@ -28,6 +28,7 @@ let
     sqlite
     tree
     wget
+    elixir
   ];
   
 in
