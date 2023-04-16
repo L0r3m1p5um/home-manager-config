@@ -12,7 +12,7 @@ let
   rust = with pkgs; [
     rustup
     pkg-config
-    gcc
+#    gcc
   ];
 
   containers = with pkgs; [
@@ -29,6 +29,7 @@ let
     tree
     wget
     elixir
+    (pkgs.callPackage ./buck2 { })
   ];
   
 in

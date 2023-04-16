@@ -22,9 +22,9 @@
 
   outputs = { self, nixpkgs, rust-overlay, home-manager, flake-utils }:
     let
-      username = "michael";
+      username = "nixos";
       system = "x86_64-linux";
-      homeDirectory = "/home/michael";
+      homeDirectory = "/home/nixos";
       overlays = [ (import rust-overlay) ];
       pkgs = import nixpkgs {
         inherit system overlays;
