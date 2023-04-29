@@ -28,6 +28,8 @@ let
     sqlite
     tree
     wget
+    haskell.compiler.ghcHEAD
+    haskellPackages.haskell-language-server
     elixir
     (pkgs.callPackage ./buck2 { })
   ];
