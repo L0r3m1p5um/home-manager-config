@@ -6,13 +6,14 @@ let
   python = with pkgs; [ (python311.withPackages(ps: with ps; [
       pip
       requests
+      virtualenv
     ])) 
   ];
 
   rust = with pkgs; [
     rustup
     pkg-config
-#    gcc
+    gcc
   ];
 
   containers = with pkgs; [
@@ -28,11 +29,19 @@ let
     sqlite
     tree
     wget
+    elixir
+    dhall-json
+    dhall
+    (pkgs.callPackage ./buck2 { })
+  ];
+
+  haskell_tools = with pkgs; [
     haskell.compiler.ghcHEAD
     haskellPackages.haskell-language-server
-    elixir
-    (pkgs.callPackage ./buck2 { })
+    ormolu
+    hlint
+    
   ];
   
 in
-python ++ homePackages ++ rust ++ containers
+python ++ homePackages ++ rust ++ containers ++ haskell_tools
