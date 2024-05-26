@@ -24,7 +24,7 @@
     let
       username = "nixos";
       system = "x86_64-linux";
-      homeDirectory = "/home/nixos";
+      homeDirectory = "/home/michael";
       overlays = [ (import rust-overlay) ];
       pkgs = import nixpkgs {
         inherit system overlays;
