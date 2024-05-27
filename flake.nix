@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs = {
@@ -17,12 +18,11 @@
         flake-utils.follows = "flake-utils";
       };
     };
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs, rust-overlay, home-manager, flake-utils }:
     let
-      username = "nixos";
+      username = "michael";
       system = "x86_64-linux";
       homeDirectory = "/home/michael";
       overlays = [ (import rust-overlay) ];

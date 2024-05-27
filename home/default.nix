@@ -19,15 +19,6 @@ in
   programs =
     import ./programs.nix { inherit homeDirectory pkgs username; };
 
-  imports = [
-    "${fetchTarball {
-      url = "https://github.com/msteen/nixos-vscode-server/tarball/master";
-      sha256 = "0mnky0vzbcbxj1423fyaa8mq6cxqsdvhrv7nmlf8x730w5l2xffr";
-    }}/modules/vscode-server/home.nix"
-  ];
-
-  services.vscode-server.enable = true;
-
   # services = import ./services.nix;
 
   # xdg = import ./xdg.nix;

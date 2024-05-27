@@ -32,7 +32,6 @@ let
     elixir
     dhall-json
     dhall
-    (pkgs.callPackage ./buck2 { })
   ];
 
   haskell_tools = with pkgs; [
