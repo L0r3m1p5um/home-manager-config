@@ -34,6 +34,12 @@ let
     dhall
   ];
 
+  embedded = with pkgs; [
+    gdb
+    minicom
+    openocd
+  ];
+
   haskell_tools = with pkgs; [
     haskell.compiler.ghcHEAD
     haskellPackages.haskell-language-server
@@ -43,4 +49,4 @@ let
   ];
   
 in
-python ++ homePackages ++ rust ++ containers ++ haskell_tools
+python ++ homePackages ++ rust ++ containers ++ haskell_tools ++ embedded
