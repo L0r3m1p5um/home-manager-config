@@ -1,4 +1,4 @@
-{ homeDirectory, pkgs }:
+{ pkgs, ... }:
 
 let
   inherit pkgs;
@@ -22,7 +22,20 @@ let
   ];
 
   homePackages = with pkgs; [
+    bottom # System monitor
+    du-dust # du
+    dua # du
+    dysk # df
+    procs # ps
+
+    # Other utils
+    htop
+    ncdu
+    sshfs
+    tlrc
+
     ripgrep
+    fd
     git-crypt
     openssl
     just
@@ -49,4 +62,5 @@ let
   ];
   
 in
-python ++ homePackages ++ rust ++ containers ++ haskell_tools ++ embedded
+{ home.packages = python ++ homePackages ++ rust ++ containers ++ haskell_tools ++ embedded; }
+

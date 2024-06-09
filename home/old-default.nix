@@ -1,4 +1,4 @@
-{ homeDirectory, pkgs, system, username }:
+{ homeDirectory, pkgs, system, username, nixvim }:
 
 let
   stateVersion = "22.11";
@@ -6,6 +6,7 @@ let
   nixPkg = pkgs.nixUnstable;
 in
 {
+
   # initial home config
   home = { inherit homeDirectory packages stateVersion username; };
 
