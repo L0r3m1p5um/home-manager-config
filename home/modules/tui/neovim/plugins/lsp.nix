@@ -30,7 +30,7 @@
           docker-compose-language-service.enable = true;
           gleam.enable = true;
           hls.enable = true;
-          helm_ls.enable = true;
+          helm-ls.enable = true;
           jsonls.enable = true;
           nushell.enable = true;
         };
