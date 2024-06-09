@@ -9,6 +9,7 @@
     ./neovim
     ./packages.nix
     ./nushell
+    ./nix.nix
   ];
 
   programs = {
