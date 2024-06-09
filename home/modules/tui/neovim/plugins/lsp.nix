@@ -23,9 +23,16 @@
         };
 
         servers = {
-          clangd.enable = true;
           lua-ls.enable = true;
-          texlab.enable = true;
+          rust-analyzer.enable = true;
+          bashls.enable = true;
+          dhall-lsp-server.enable = true;
+          docker-compose-language-service.enable = true;
+          gleam.enable = true;
+          hls.enable = true;
+          helm_ls.enable = true;
+          jsonls.enable = true;
+          nushell.enable = true;
         };
       };
     };
