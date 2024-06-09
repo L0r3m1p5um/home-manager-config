@@ -7,7 +7,6 @@
   imports = [
     ./git.nix
     ./neovim
-    ./nix.nix
     ./packages.nix
     ./nushell
   ];
