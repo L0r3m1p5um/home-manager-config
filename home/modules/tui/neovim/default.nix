@@ -2,6 +2,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins
+    ./completion.nix
   ];
 
   home.shellAliases.v = "nvim";
@@ -13,6 +14,6 @@
     viAlias = true;
     vimAlias = true;
 
-    luaLoader.enable = true;
+    luaLoader.enable = false;
   };
 }

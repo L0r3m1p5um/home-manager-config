@@ -2,12 +2,12 @@
 
 let
   inherit pkgs;
-  
+
   python = with pkgs; [ (python311.withPackages(ps: with ps; [
       pip
       requests
       virtualenv
-    ])) 
+    ]))
   ];
 
   rust = with pkgs; [
@@ -45,6 +45,7 @@ let
     elixir
     dhall-json
     dhall
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   ];
 
   embedded = with pkgs; [
@@ -58,9 +59,8 @@ let
     haskellPackages.haskell-language-server
     ormolu
     hlint
-    
+
   ];
-  
+
 in
 { home.packages = python ++ homePackages ++ rust ++ containers ++ haskell_tools ++ embedded; }
-

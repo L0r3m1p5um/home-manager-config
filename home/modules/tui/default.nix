@@ -12,12 +12,14 @@
     ./nix.nix
   ];
 
+  fonts.fontconfig.enable = true;
+
   programs = {
 
 	home-manager.enable = true;
 
 	jq.enable = true;
-	
+
 	bat.enable = true;
 	bat.config.theme = "gruvbox-dark";
 
