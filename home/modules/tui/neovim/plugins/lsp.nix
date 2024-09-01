@@ -26,7 +26,11 @@
 
         servers = {
           lua-ls.enable = true;
-          rust-analyzer.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installRustc = false;
+            installCargo = false;
+          };
           bashls.enable = true;
           dhall-lsp-server.enable = true;
           docker-compose-language-service.enable = true;
@@ -35,7 +39,7 @@
           helm-ls.enable = true;
           jsonls.enable = true;
           nushell.enable = true;
-	  nil-ls.enable = true;
+          nil-ls.enable = true;
         };
       };
     };
