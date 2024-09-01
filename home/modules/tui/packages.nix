@@ -46,6 +46,11 @@ let
     dhall-json
     dhall
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+
+    # Nix lsp
+    nil
+
+    gleam
   ];
 
   embedded = with pkgs; [

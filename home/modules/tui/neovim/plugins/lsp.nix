@@ -33,6 +33,7 @@
           helm-ls.enable = true;
           jsonls.enable = true;
           nushell.enable = true;
+	  nil-ls.enable = true;
         };
       };
     };
