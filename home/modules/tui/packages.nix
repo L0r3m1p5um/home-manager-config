@@ -49,8 +49,11 @@ let
 
     # Nix lsp
     nil
+  ];
 
+  gleam_reqs = with pkgs; [
     gleam
+    erlang
   ];
 
   embedded = with pkgs; [
@@ -64,8 +67,16 @@ let
     haskellPackages.haskell-language-server
     ormolu
     hlint
-
   ];
 
 in
-{ home.packages = python ++ homePackages ++ rust ++ containers ++ haskell_tools ++ embedded; }
+{ home.packages = builtins.concatLists [
+    python
+    homePackages
+    rust
+    containers
+    haskell_tools
+    embedded
+    gleam_reqs
+  ];
+}
