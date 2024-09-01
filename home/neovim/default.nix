@@ -7,6 +7,8 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./keymappings.nix
+    ./plugins
   ];
 
   options = {

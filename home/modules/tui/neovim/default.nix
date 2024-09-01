@@ -3,6 +3,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins
     ./completion.nix
+    ./keymappings.nix
   ];
 
   home.shellAliases.v = "nvim";
