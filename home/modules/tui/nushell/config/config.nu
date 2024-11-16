@@ -143,9 +143,12 @@ let light_theme = {
 #     carapace $spans.0 nushell ...$spans | from json
 # }
 
+use completions *
+use scripts *
+
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
-    show_banner: true # true or false to enable or disable the welcome banner at startup
+    show_banner: false # true or false to enable or disable the welcome banner at startup
 
     ls: {
         use_ls_colors: true # use the LS_COLORS environment variable to colorize output
@@ -153,7 +156,7 @@ $env.config = {
     }
 
     rm: {
-        always_trash: false # always act as if -t was given. Can be overridden with -p
+        always_trash: true # always act as if -t was given. Can be overridden with -p
     }
 
     table: {
@@ -205,7 +208,7 @@ $env.config = {
         partial: true    # set this to false to prevent partial filling of the prompt
         algorithm: "prefix"    # prefix or fuzzy
         external: {
-            enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
+            enable: false # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
             max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
             completer: null # check 'carapace_completer' above as an example
         }
@@ -282,7 +285,16 @@ $env.config = {
     }
 
     hooks: {
-        pre_prompt: [{ null }] # run before the prompt is shown
+        pre_prompt: [{ ||
+              if (which direnv | is-empty) {
+                return
+            }
+
+            direnv export json | from json | default {} | load-env
+            if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+                $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+            }
+        }] # run before the prompt is shown
         pre_execution: [{ null }] # run before the repl input is run
         env_change: {
             PWD: [{|before, after| null }] # run if the PWD environment is different since the last repl input
