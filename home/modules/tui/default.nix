@@ -14,20 +14,30 @@
 
   fonts.fontconfig.enable = true;
 
+  xdg = {
+    enable = true;
+  };
+
   programs = {
 
-	home-manager.enable = true;
+    home-manager.enable = true;
 
-	jq.enable = true;
+    jq.enable = true;
 
-	bat.enable = true;
-	bat.config.theme = "gruvbox-dark";
+    bat.enable = true;
+    bat.config.theme = "gruvbox-dark";
 
-	direnv = {
-		enable = true;
-		enableFishIntegration = true;
-		nix-direnv.enable = true;
-	};
+    oh-my-posh = {
+      enable = true;
+      useTheme = "gruvbox";
+    };
+
+
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
 
   };
 
