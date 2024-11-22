@@ -17,5 +17,10 @@ in {
           command = "setlocal spell spelllang=en";
         }
         (tabSize 2 ["gleam" "nix"])
+        {
+          event = "FileType";
+          pattern = ["gleam"];
+          command = "TSBufEnable highlight";
+        }
       ];
 }
