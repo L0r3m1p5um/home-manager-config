@@ -54,6 +54,7 @@ let
   gleam_reqs = with pkgs; [
     gleam
     erlang
+    rebar3
   ];
 
   embedded = with pkgs; [
