@@ -24,8 +24,22 @@
 
     jq.enable = true;
 
-    bat.enable = true;
-    bat.config.theme = "gruvbox-dark";
+    bat = {
+      enable = true;
+      config.theme = "gruvbox-dark";
+      extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+      syntaxes = {
+        gleam = {
+            src = pkgs.fetchFromGitHub {
+              owner = "digitalcora";
+              repo = "sublime-text-gleam";
+              rev = "8bc9f62dbf6e8a5798f8fed65c10fb6a41c51291";
+              hash = "sha256-CJkrOJArBk71E/qwbawSwkqdQgLDkJvGkiy4CNQ3e4k=";
+            };
+            file = "package/Gleam.sublime-syntax";
+          };
+      };
+    };
 
     oh-my-posh = {
       enable = true;

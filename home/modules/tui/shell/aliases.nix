@@ -12,7 +12,7 @@
   cp = "cp -iv";
   mkd = "mkdir -pv";
   f = "fg";
-  cat = "bat -p";
+  cat = "bat -p --color auto";
 
   ########
   # Misc #
