@@ -4,6 +4,7 @@ let
       pattern = filetypes;
       command = "setlocal tabstop=2 shiftwidth=2 expandtab";
     };
+
 in {
   programs.nixvim.autoCmd = [
         # Enable spellcheck for some filetypes
@@ -19,7 +20,7 @@ in {
         (tabSize 2 ["gleam" "nix"])
         {
           event = "FileType";
-          pattern = ["gleam"];
+          pattern = ["gleam" "nu" "dhall"];
           command = "TSBufEnable highlight";
         }
       ];
