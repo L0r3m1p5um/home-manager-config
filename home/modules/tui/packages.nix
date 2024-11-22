@@ -53,7 +53,7 @@ let
 
   gleam_reqs = with pkgs; [
     gleam
-    erlang
+    erlang_27
     rebar3
   ];
 

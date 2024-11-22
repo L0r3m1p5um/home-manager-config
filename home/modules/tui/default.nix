@@ -10,6 +10,7 @@
     ./packages.nix
     ./nushell
     ./nix.nix
+    ./zellij.nix
   ];
 
   fonts.fontconfig.enable = true;
