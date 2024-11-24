@@ -43,6 +43,7 @@
           jsonls.enable = true;
           nushell.enable = true;
           nil_ls.enable = true;
+          erlangls.enable = true;
         };
       };
     };
