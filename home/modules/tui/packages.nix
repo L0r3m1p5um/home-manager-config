@@ -45,7 +45,8 @@ let
     elixir
     dhall-json
     dhall
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
 
     # Nix lsp
     nil
