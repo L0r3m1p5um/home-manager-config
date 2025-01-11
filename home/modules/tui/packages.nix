@@ -65,8 +65,10 @@ let
   ];
 
   haskell_tools = with pkgs; [
-    haskell.compiler.ghcHEAD
-    haskellPackages.haskell-language-server
+    haskell.compiler.ghc910
+    (haskell-language-server.override {
+      supportedGhcVersions = [ "910" ];
+    })
     ormolu
     hlint
   ];
