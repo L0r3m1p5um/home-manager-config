@@ -45,6 +45,8 @@ let
     elixir
     dhall-json
     dhall
+    nickel
+    nls
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
 
