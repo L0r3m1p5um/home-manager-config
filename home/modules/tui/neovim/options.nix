@@ -7,13 +7,6 @@
       loaded_python_provider = 0; # Python 2
     };
 
-    clipboard = {
-      # Use system clipboard
-      register = "unnamedplus";
-
-      providers.wl-copy.enable = true;
-    };
-
     opts = {
       updatetime = 100; # Faster completion
 

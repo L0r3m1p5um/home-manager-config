@@ -11,6 +11,7 @@
     ./nushell
     ./nix.nix
     ./zellij.nix
+    ./helix.nix
   ];
 
   fonts.fontconfig.enable = true;
