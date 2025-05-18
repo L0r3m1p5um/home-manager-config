@@ -18,5 +18,7 @@
     vimAlias = true;
 
     luaLoader.enable = false;
+
+    filetype.extension.ncl = "nickel";
   };
 }

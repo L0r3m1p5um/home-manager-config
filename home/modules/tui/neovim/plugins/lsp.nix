@@ -24,6 +24,8 @@
           };
         };
 
+        postConfig = "vim.lsp.enable('nickel_ls')";
+
         servers = {
           lua_ls.enable = true;
           rust_analyzer = {
