@@ -44,10 +44,7 @@
           nushell.enable = true;
           nil_ls.enable = true;
           erlangls.enable = true;
-          nickel_ls = {
-            enable = true;
-            filetypes = ["ncl"];
-          };
+          nickel_ls.enable = true;
         };
       };
     };
