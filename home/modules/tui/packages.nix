@@ -47,6 +47,7 @@ let
     dhall
     nickel
     nls
+    hyperfine # benchmarking
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
 
