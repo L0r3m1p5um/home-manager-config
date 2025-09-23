@@ -15,7 +15,7 @@ alias sort-yaml = yq -P 'sort_keys(..)'
 
 export def format-files [...filenames] {
     for file in ($filenames | concat) {
-        let formatter = $env.FILE_FORMATTERS | get -i ($file | file-extension);
+        let formatter = $env.FILE_FORMATTERS | get -o ($file | file-extension);
         if ($formatter != null) {
             do $formatter file
         }
