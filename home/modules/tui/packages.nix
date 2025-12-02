@@ -3,11 +3,14 @@
 let
   inherit pkgs;
 
-  python = with pkgs; [ (python311.withPackages(ps: with ps; [
-      pip
-      requests
-      virtualenv
-    ]))
+  python = with pkgs; [
+    (python311.withPackages (
+      ps: with ps; [
+        pip
+        requests
+        virtualenv
+      ]
+    ))
   ];
 
   rust = with pkgs; [
@@ -23,7 +26,7 @@ let
 
   homePackages = with pkgs; [
     bottom # System monitor
-    du-dust # du
+    dust # du
     dua # du
     dysk # df
     procs # ps
@@ -77,7 +80,8 @@ let
   ];
 
 in
-{ home.packages = builtins.concatLists [
+{
+  home.packages = builtins.concatLists [
     python
     homePackages
     rust

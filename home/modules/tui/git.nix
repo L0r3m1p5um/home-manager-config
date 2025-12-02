@@ -2,25 +2,25 @@
   programs = {
     git = {
       enable = true;
-      userName = "Michael Araujo";
-      userEmail = "michael.e.araujo@gmail.com";
-      lfs.enable = true;
       ignores = [
-		".direnv/"
-		"*.swp"
-		".vscode/"
-		".DS_Store"
+        ".direnv/"
+        "*.swp"
+        ".vscode/"
+        ".DS_Store"
       ];
-      aliases = {
-        cm = "commit -m";
-        co = "checkout";
-        d = "diff";
-        st = "status";
-      };
-      extraConfig = {
+      lfs.enable = true;
+      settings = {
+        user.name = "Michael Araujo";
+        user.email = "michael.e.araujo@gmail.com";
+        alias = {
+          cm = "commit -m";
+          co = "checkout";
+          d = "diff";
+          st = "status";
+        };
         init.defaultBranch = "main";
       };
-	};
+    };
 
     lazygit = {
       enable = true;
@@ -29,8 +29,11 @@
           # showFileTree = false;
 
           theme = {
-            activeBorderColor = ["blue" "bold"];
-            selectedLineBgColor = ["white"];
+            activeBorderColor = [
+              "blue"
+              "bold"
+            ];
+            selectedLineBgColor = [ "white" ];
           };
         };
         git = {
