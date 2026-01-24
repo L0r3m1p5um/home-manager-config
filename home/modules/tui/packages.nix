@@ -17,6 +17,7 @@ let
     rustup
     pkg-config
     gcc
+    cargo-expand
   ];
 
   containers = with pkgs; [
