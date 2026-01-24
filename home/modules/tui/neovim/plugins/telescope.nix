@@ -1,7 +1,11 @@
+{ pkgs, ... }:
 {
   programs.nixvim = {
     plugins.telescope = {
       enable = true;
+
+      # fuzzy finding
+      extensions.fzf-native.enable = true;
 
       keymaps = {
         # Find files using Telescope command-line sugar.
@@ -17,6 +21,17 @@
       };
 
       settings.defaults = {
+        vimgrep_arguments = [
+          "${pkgs.ripgrep}/bin/rg"
+          "-L"
+          "--color=never"
+          "--no-heading"
+          "--with-filename"
+          "--line-number"
+          "--column"
+          "--smart-case"
+          "--fixed-strings"
+        ];
         file_ignore_patterns = [
           "^.git/"
           "^.mypy_cache/"
