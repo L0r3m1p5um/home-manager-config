@@ -21,7 +21,6 @@ let
   ];
 
   containers = with pkgs; [
-    kubectl
     minikube
   ];
 

@@ -45,7 +45,6 @@
           jsonls.enable = true;
           nushell.enable = true;
           nil_ls.enable = true;
-          erlangls.enable = false;
           nickel_ls.enable = true;
         };
       };

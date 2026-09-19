@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -21,5 +21,6 @@
     luaLoader.enable = false;
 
     filetype.extension.ncl = "nickel";
+    nixpkgs.pkgs = pkgs;
   };
 }
